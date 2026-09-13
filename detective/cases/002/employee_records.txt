@@ -1,0 +1,19 @@
+EMPLOYEE ACCESS RECORDS
+
+Badge A113
+Assigned Employee: Bradley Chooser
+Department: Facilities
+Access Level: Employee
+Status: Active
+
+Badge B117
+Assigned Employee: Sarah Bowler
+Department: Administration
+Access Level: Manager
+Status: Active
+
+Badge C204
+Assigned Employee: Johnny Still
+Department: Records
+Access Level: Employee
+Status: Active

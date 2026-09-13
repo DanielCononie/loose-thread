@@ -21,15 +21,17 @@ agent = create_agent(
 print("Agent ready. Ctrl+C to quit.")
 
 
-
-thread_id = uuid.uuid4()
-while True:
-    user_input = input("\nYou: ")
-
-    # Raw LLM result
-    raw_result = agent.invoke({"messages": [{"role": "user", "content": user_input}]}, {"configurable": {"thread_id": thread_id}})
-
-    print(f"\nAgent: {raw_result["messages"][-1].content}\n")
-    
+def ask(question: str, thread_id: str):
+    raw_result = agent.invoke(
+        {"messages": [{"role": "user", "content": question}]},
+        {"configurable": {"thread_id": thread_id}},
+    )
+    return raw_result["messages"][-1].content
 
 
+if __name__ == "__main__":
+    thread_id = str(uuid.uuid4())
+    while True:
+        user_input = input("\nYou: ")
+
+        print(f"\nAgent: {ask(user_input, thread_id)}\n")
