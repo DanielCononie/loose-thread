@@ -1,6 +1,7 @@
 import uuid
 
 from fastapi import FastAPI
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
 from agents import ask
@@ -16,4 +17,4 @@ class Question(BaseModel):
 
 @app.post("/api/detective")
 def detective(payload: Question):
-    return {"answer": ask(payload.question, thread_id)}
+    return StreamingResponse(ask(payload.question, thread_id), media_type="text/event-stream")
