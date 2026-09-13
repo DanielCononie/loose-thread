@@ -44,7 +44,7 @@ async def ask(question: str, thread_id: str):
             if node_name == "model":
                 if latest_message.content:
                     yield latest_message.content + "\n"
-                for tool_call in latest_message.tool_calls:
+                for _ in latest_message.tool_calls:
                     random_number = random.randint(0, 4)
                     phrase = EVIDENCE_PHRASES[random_number]
                     yield f"{phrase}\n"
