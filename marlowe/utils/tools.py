@@ -47,6 +47,7 @@ def list_directories(path_name: str):
     
     return {
         "success": True,
+        "action": "",
         "directories": directories
     }
 

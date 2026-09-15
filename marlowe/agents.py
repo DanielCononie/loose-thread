@@ -53,6 +53,7 @@ async def ask(question: str, thread_id: str):
         else:
             yield f"[{node_name}] {data}\n"
 
+
 async def main():
     thread_id = str(uuid.uuid4())
     while True:
